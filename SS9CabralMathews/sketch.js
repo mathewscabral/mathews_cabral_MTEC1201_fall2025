@@ -1,11 +1,11 @@
 /* 
-Mathews C.
-SS5_MathewsC — “Hallway Lights”
+Mathews Cabral
+SS9 —"Hallway Lights”
 
-Instructions:
-- Watch the hallway of rectangles flash.
-- Move the mouse up/down to change how deep the hallway feels.
-- Press C to change the color mood.
+Instructions===
+===Watch the hallway of rectangles flash every few frames.
+===Move the mouse up/down to change how deep the hallway feels.
+===Press C to change the color mood.
 */
 
 let paletteIndex = 0; // which color mode we are in
@@ -19,36 +19,36 @@ function setup() {
 function draw() {
   background(5); // dark background like a tunnel
 
-  // simple flash: ON for a few frames, OFF for a few frames
+  //===simple flash: ON for a few frames, OFF for a few frames
   let lightsOn = frameCount % 10 < 5;
 
-  // how many rectangles (depth) – depends on mouseY
+  //===how many rectangles (depth) – depends on mouseY
   let steps = int(map(mouseY, 0, height, 5, 15));
   steps = constrain(steps, 8, 25);
 
-  // pick colors based on paletteIndex and lightsOn
+  //===pick colors based on paletteIndex and lightsOn
   let edgeColor;
   let fillBright;
   let fillDim;
 
   if (paletteIndex === 0) {
-    // warm / sunset
+    //===warm === sunset===
     edgeColor = color(255, 200, 140, 160);
     fillBright = color(255, 160, 80, 120);
     fillDim = color(100, 60, 40, 50);
   } else if (paletteIndex === 1) {
-    // cool / sci-fi
+    // ===cool === sci-fi===
     edgeColor = color(150, 220, 255, 170);
     fillBright = color(80, 180, 255, 130);
     fillDim = color(40, 80, 120, 60);
   } else {
-    // neon / trippy
+    // ===neon === trippy===
     edgeColor = color(180, 255, 200, 180);
     fillBright = color(120, 255, 200, 140);
     fillDim = color(180, 120, 255, 80);
   }
 
-  // ----- FOR LOOP #1: stacked rectangles into depth -----
+  //===== 1st for loop stacked rectangles for depth=====
   for (let i = 0; i < steps; i++) {
     let t = i / (steps - 1); // 0 → front, 1 → far
     let w = lerp(width * 0.95, width * 0.2, t);
@@ -66,7 +66,7 @@ function draw() {
     rect(width / 2, height / 2, w, h);
   }
 
-  // ----- FOR LOOP #2: floor lights along the bottom -----
+  //===== 2nd for loop: floor lights along the bottom=====
   let stepX = 60;
   for (let x = stepX / 2; x < width; x += stepX) {
     noStroke();
@@ -80,7 +80,7 @@ function draw() {
 }
 
 function keyPressed() {
-  // press C to switch between color moods
+  //===press C to switch between color moods
   if (key === 'c' || key === 'C') {
     paletteIndex++;
     if (paletteIndex > 2) {
