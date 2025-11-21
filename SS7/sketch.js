@@ -1,13 +1,11 @@
 /* 
 Mathews C.
-SS7 — Using the class function  “Daytime"
+SS7 — “Day & Night OOP”
+code from SS4
 
 Instructions:
 === Press "D" for Day, or "N" for Night.
-/* 
-Mathews C.
-SS7 — “Day & Night OOP”
-code from SS4
+
 
 Instructions:
 - Press D for Day
