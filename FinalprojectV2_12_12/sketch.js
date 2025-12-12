@@ -7,7 +7,7 @@ Instructions:
 - Move the mouse to move the hook and try to touch the fish
 */
 
-// ---- STATES ----
+// ===== STATES ====
 const STATE_MENU = "menu";
 const STATE_GAME = "game";
 let startTime = 0;    // game start
@@ -16,7 +16,7 @@ let gameDuration = 30; // game length
 
 let state = STATE_MENU;  // começa no menu
 
-// ---- GLOBALS ----
+// ==== GLOBALS ====
 let fishes = [];   // array com os peixes
 let hookX, hookY;  // posição do anzol
 let shark;
